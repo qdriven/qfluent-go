@@ -3,14 +3,14 @@ package client
 
 import (
 	"crypto/tls"
-	httplongclinet "github.com/qdriven/qfluent-cli/app/stresstests/server/client/http_longclinet"
-	"github.com/qdriven/qfluent-cli/pkg/qtime"
+	httplongclinet "github.com/qdriven/qfluent-go/app/stresstests/server/client/http_longclinet"
+	"github.com/qdriven/qfluent-go/pkg/qtime"
 	"log"
 	"net/http"
 	"os"
 	"time"
 
-	model "github.com/qdriven/qfluent-cli/pkg/qcurl"
+	model "github.com/qdriven/qfluent-go/pkg/qcurl"
 
 	"golang.org/x/net/http2"
 )

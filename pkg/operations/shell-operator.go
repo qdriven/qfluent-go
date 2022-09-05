@@ -4,8 +4,8 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
-	qlog "github.com/qdriven/qfluent-cli/pkg/log"
-	"github.com/qdriven/qfluent-cli/pkg/template"
+	qlog "github.com/qdriven/qfluent-go/pkg/log"
+	"github.com/qdriven/qfluent-go/pkg/template"
 	"os/exec"
 	"strings"
 )

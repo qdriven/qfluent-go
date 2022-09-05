@@ -4,12 +4,11 @@ package golink
 import (
 	"context"
 	"fmt"
+	"github.com/qdriven/qfluent-go/app/stresstests/server/client"
+	model "github.com/qdriven/qfluent-go/pkg/qcurl"
+	"github.com/qdriven/qfluent-go/pkg/qtime"
 	"sync"
 	"time"
-
-	"github.com/link1st/go-stress-testing/helper"
-	"github.com/link1st/go-stress-testing/model"
-	"github.com/link1st/go-stress-testing/server/client"
 )
 
 const (
@@ -88,7 +87,7 @@ func webSocketRequest(chanID uint64, ch chan<- *model.RequestResults, i uint64, 
 			errCode, isSucceed = request.GetVerifyWebSocket()(request, seq, msg)
 		}
 	}
-	requestTime := uint64(helper.DiffNano(startTime))
+	requestTime := uint64(qtime.DiffNano(startTime))
 	requestResults := &model.RequestResults{
 		Time:      requestTime,
 		IsSucceed: isSucceed,

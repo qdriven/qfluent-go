@@ -2,7 +2,7 @@ package httplongclinet
 
 import (
 	"crypto/tls"
-	model "github.com/qdriven/qfluent-cli/pkg/qcurl"
+	model "github.com/qdriven/qfluent-go/pkg/qcurl"
 	"golang.org/x/net/http2"
 	"net"
 	"net/http"

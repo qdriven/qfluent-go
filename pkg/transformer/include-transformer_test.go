@@ -1,7 +1,7 @@
 package transformer
 
 import (
-	"github.com/qdriven/qfluent-cli/pkg/ioutils"
+	"github.com/qdriven/qfluent-go/pkg/ioutils"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

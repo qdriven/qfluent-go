@@ -4,8 +4,7 @@ package verify
 import (
 	"encoding/json"
 	"fmt"
-
-	"github.com/link1st/go-stress-testing/model"
+	model "github.com/qdriven/qfluent-go/pkg/qcurl"
 )
 
 // WebSocketResponseJSON 返回数据结构体，返回值为json

@@ -3,9 +3,9 @@ package transformer
 import (
 	"bufio"
 	"fmt"
-	ioutils "github.com/qdriven/qfluent-cli/pkg/ioutils"
-	qlog "github.com/qdriven/qfluent-cli/pkg/log"
-	"github.com/qdriven/qfluent-cli/pkg/template"
+	ioutils "github.com/qdriven/qfluent-go/pkg/ioutils"
+	qlog "github.com/qdriven/qfluent-go/pkg/log"
+	"github.com/qdriven/qfluent-go/pkg/template"
 	"strings"
 )
 

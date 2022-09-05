@@ -3,10 +3,10 @@ package golink
 
 import (
 	"context"
-	pb "github.com/qdriven/qfluent-cli/app/stresstests/proto"
-	"github.com/qdriven/qfluent-cli/app/stresstests/server/client"
-	model "github.com/qdriven/qfluent-cli/pkg/qcurl"
-	"github.com/qdriven/qfluent-cli/pkg/qtime"
+	pb "github.com/qdriven/qfluent-go/app/stresstests/proto"
+	"github.com/qdriven/qfluent-go/app/stresstests/server/client"
+	model "github.com/qdriven/qfluent-go/pkg/qcurl"
+	"github.com/qdriven/qfluent-go/pkg/qtime"
 	"sync"
 	"time"
 )

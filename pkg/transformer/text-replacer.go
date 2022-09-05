@@ -1,8 +1,8 @@
 package transformer
 
 import (
-	types "github.com/qdriven/qfluent-cli/pkg/io"
-	"github.com/qdriven/qfluent-cli/pkg/template"
+	types "github.com/qdriven/qfluent-go/pkg/ioutils"
+	"github.com/qdriven/qfluent-go/pkg/template"
 	"strings"
 )
 

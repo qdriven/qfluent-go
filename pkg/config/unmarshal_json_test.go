@@ -1,4 +1,4 @@
-package config_test
+package config
 
 import (
 	"encoding/json"
@@ -32,12 +32,12 @@ func TestUnmatchedKeyInJsonConfigFile(t *testing.T) {
 		var result configStruct
 
 		// Do not return error when there are unmatched keys but ErrorOnUnmatchedKeys is false
-		if err := configor.New(&configor.Config{}).Load(&result, filename); err != nil {
+		if err := New(&Config{}).Load(&result, filename); err != nil {
 			t.Errorf("Should NOT get error when loading configuration with extra keys. Error: %v", err)
 		}
 
 		// Return an error when there are unmatched keys and ErrorOnUnmatchedKeys is true
-		if err := configor.New(&configor.Config{ErrorOnUnmatchedKeys: true}).Load(&result, filename); err == nil || !strings.Contains(err.Error(), "json: unknown field") {
+		if err := New(&Config{ErrorOnUnmatchedKeys: true}).Load(&result, filename); err == nil || !strings.Contains(err.Error(), "json: unknown field") {
 
 			t.Errorf("Should get unknown field error when loading configuration with extra keys. Instead got error: %v", err)
 		}
@@ -57,12 +57,12 @@ func TestUnmatchedKeyInJsonConfigFile(t *testing.T) {
 	var result configStruct
 
 	// Do not return error when there are unmatched keys but ErrorOnUnmatchedKeys is false
-	if err := configor.New(&configor.Config{}).Load(&result, filename); err != nil {
+	if err := New(&Config{}).Load(&result, filename); err != nil {
 		t.Errorf("Should NOT get error when loading configuration with extra keys. Error: %v", err)
 	}
 
 	// Return an error when there are unmatched keys and ErrorOnUnmatchedKeys is true
-	if err := configor.New(&configor.Config{ErrorOnUnmatchedKeys: true}).Load(&result, filename); err == nil || !strings.Contains(err.Error(), "json: unknown field") {
+	if err := New(&Config{ErrorOnUnmatchedKeys: true}).Load(&result, filename); err == nil || !strings.Contains(err.Error(), "json: unknown field") {
 
 		t.Errorf("Should get unknown field error when loading configuration with extra keys. Instead got error: %v", err)
 	}

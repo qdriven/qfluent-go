@@ -1,10 +1,10 @@
 package transformer
 
 import (
-	"github.com/qdriven/qfluent-cli/pkg/inputs"
-	types "github.com/qdriven/qfluent-cli/pkg/io"
-	qlog "github.com/qdriven/qfluent-cli/pkg/log"
-	"github.com/qdriven/qfluent-cli/pkg/operations"
+	"github.com/qdriven/qfluent-go/pkg/inputs"
+	types "github.com/qdriven/qfluent-go/pkg/ioutils"
+	qlog "github.com/qdriven/qfluent-go/pkg/log"
+	"github.com/qdriven/qfluent-go/pkg/operations"
 	"strings"
 )
 

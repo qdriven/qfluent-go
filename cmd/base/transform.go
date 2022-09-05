@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/qdriven/qfluent-cli/cmd"
-	"github.com/qdriven/qfluent-cli/pkg/generator"
+	"github.com/qdriven/qfluent-go/cmd"
+	"github.com/qdriven/qfluent-go/pkg/generator"
 	"github.com/spf13/cobra"
 	"log"
 )

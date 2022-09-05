@@ -3,9 +3,9 @@ package transformer
 import (
 	"errors"
 	"fmt"
-	"github.com/qdriven/qfluent-cli/pkg/ioutils"
-	qlog "github.com/qdriven/qfluent-cli/pkg/log"
-	"github.com/qdriven/qfluent-cli/pkg/operations"
+	"github.com/qdriven/qfluent-go/pkg/ioutils"
+	qlog "github.com/qdriven/qfluent-go/pkg/log"
+	"github.com/qdriven/qfluent-go/pkg/operations"
 	"io"
 	"os"
 	"path/filepath"

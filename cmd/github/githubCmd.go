@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/cli/go-gh"
-	"github.com/qdriven/qfluent-cli/cmd"
-	gh_api "github.com/qdriven/qfluent-cli/internal/github"
+	"github.com/qdriven/qfluent-go/cmd"
+	gh_api "github.com/qdriven/qfluent-go/internal/github"
 	"strconv"
 	"strings"
 

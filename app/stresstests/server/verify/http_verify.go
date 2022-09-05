@@ -10,7 +10,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	model "github.com/qdriven/qfluent-cli/pkg/qcurl"
+	model "github.com/qdriven/qfluent-go/pkg/qcurl"
 )
 
 // getZipData 处理gzip压缩

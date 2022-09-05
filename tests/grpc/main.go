@@ -4,7 +4,7 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "github.com/qdriven/qfluent-cli/app/stresstests/proto"
+	pb "github.com/qdriven/qfluent-go/app/stresstests/proto"
 	"google.golang.org/grpc"
 	"log"
 	"net"

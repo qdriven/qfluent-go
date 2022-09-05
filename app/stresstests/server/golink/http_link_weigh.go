@@ -2,10 +2,9 @@
 package golink
 
 import (
+	model "github.com/qdriven/qfluent-go/pkg/qcurl"
 	"math/rand"
 	"time"
-
-	"github.com/link1st/go-stress-testing/model"
 )
 
 // ReqListWeigh 接口加权压测

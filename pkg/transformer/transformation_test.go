@@ -1,12 +1,11 @@
 package transformer
 
 import (
-	"testing"
-
-	"github.com/rantav/go-archetype/inputs"
-	"github.com/rantav/go-archetype/types"
+	"github.com/qdriven/qfluent-go/pkg/inputs"
+	types "github.com/qdriven/qfluent-go/pkg/ioutils"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"testing"
 )
 
 func TestTransformationsTransform(t *testing.T) {

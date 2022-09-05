@@ -4,11 +4,10 @@ package golink
 import (
 	"context"
 	"fmt"
+	"github.com/qdriven/qfluent-go/app/stresstests/server/client"
+	model "github.com/qdriven/qfluent-go/pkg/qcurl"
 	"net/http"
 	"sync"
-
-	"github.com/link1st/go-stress-testing/model"
-	"github.com/link1st/go-stress-testing/server/client"
 )
 
 // HTTP 请求

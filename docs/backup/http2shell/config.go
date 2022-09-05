@@ -1,4 +1,4 @@
-package http2shell
+package main
 
 import (
 	"flag"

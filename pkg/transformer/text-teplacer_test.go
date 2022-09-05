@@ -1,11 +1,10 @@
 package transformer
 
 import (
-	"testing"
-
-	"github.com/rantav/go-archetype/types"
+	types "github.com/qdriven/qfluent-go/pkg/ioutils"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"testing"
 )
 
 func TestTextReplacerBasics(t *testing.T) {

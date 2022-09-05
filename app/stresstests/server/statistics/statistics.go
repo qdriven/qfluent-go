@@ -3,7 +3,7 @@ package statistics
 
 import (
 	"fmt"
-	"github.com/qdriven/qfluent-cli/pkg/misc"
+	"github.com/qdriven/qfluent-go/pkg/misc"
 	"sort"
 	"strings"
 	"sync"
@@ -12,7 +12,7 @@ import (
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
 
-	model "github.com/qdriven/qfluent-cli/pkg/qcurl"
+	model "github.com/qdriven/qfluent-go/pkg/qcurl"
 )
 
 var (

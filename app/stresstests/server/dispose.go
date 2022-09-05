@@ -3,12 +3,12 @@ package server
 import (
 	"context"
 	"fmt"
-	"github.com/qdriven/qfluent-cli/app/stresstests/server/client"
-	httplongclinet "github.com/qdriven/qfluent-cli/app/stresstests/server/client/http_longclinet"
-	"github.com/qdriven/qfluent-cli/app/stresstests/server/golink"
-	"github.com/qdriven/qfluent-cli/app/stresstests/server/statistics"
-	"github.com/qdriven/qfluent-cli/app/stresstests/server/verify"
-	model "github.com/qdriven/qfluent-cli/pkg/qcurl"
+	"github.com/qdriven/qfluent-go/app/stresstests/server/client"
+	httplongclinet "github.com/qdriven/qfluent-go/app/stresstests/server/client/http_longclinet"
+	"github.com/qdriven/qfluent-go/app/stresstests/server/golink"
+	"github.com/qdriven/qfluent-go/app/stresstests/server/statistics"
+	"github.com/qdriven/qfluent-go/app/stresstests/server/verify"
+	model "github.com/qdriven/qfluent-go/pkg/qcurl"
 	"sync"
 	"time"
 )

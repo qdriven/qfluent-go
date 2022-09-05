@@ -3,7 +3,7 @@ package reflector
 import (
 	"errors"
 	"fmt"
-	"github.com/qdriven/qfluent-cli/pkg/reflector/tmp"
+	"github.com/qdriven/qfluent-go/pkg/reflector/tmp"
 	"reflect"
 	"sort"
 	"testing"

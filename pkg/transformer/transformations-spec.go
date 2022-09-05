@@ -1,8 +1,8 @@
 package transformer
 
 import (
-	"github.com/qdriven/qfluent-cli/pkg/inputs"
-	"github.com/qdriven/qfluent-cli/pkg/operations"
+	"github.com/qdriven/qfluent-go/pkg/inputs"
+	"github.com/qdriven/qfluent-go/pkg/operations"
 )
 
 const (

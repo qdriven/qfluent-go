@@ -2,7 +2,7 @@ package ioutils
 
 import (
 	"fmt"
-	qlog "github.com/qdriven/qfluent-cli/pkg/log"
+	qlog "github.com/qdriven/qfluent-go/pkg/log"
 	"io/ioutil"
 	"os"
 	"path/filepath"

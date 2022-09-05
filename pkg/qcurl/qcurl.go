@@ -3,7 +3,7 @@ package qcurl
 import (
 	"encoding/json"
 	"errors"
-	"github.com/qdriven/qfluent-cli/pkg/qarray"
+	"github.com/qdriven/qfluent-go/pkg/qarray"
 	"io/ioutil"
 	"os"
 	"strings"

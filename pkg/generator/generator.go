@@ -2,9 +2,9 @@ package generator
 
 import (
 	"github.com/davecgh/go-spew/spew"
-	"github.com/qdriven/qfluent-cli/pkg/inputs"
-	"github.com/qdriven/qfluent-cli/pkg/log"
-	"github.com/qdriven/qfluent-cli/pkg/transformer"
+	"github.com/qdriven/qfluent-go/pkg/inputs"
+	"github.com/qdriven/qfluent-go/pkg/log"
+	"github.com/qdriven/qfluent-go/pkg/transformer"
 	"os"
 	"strings"
 )

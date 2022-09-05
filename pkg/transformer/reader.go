@@ -1,9 +1,9 @@
 package transformer
 
 import (
-	"github.com/qdriven/qfluent-cli/pkg/inputs"
-	types "github.com/qdriven/qfluent-cli/pkg/io"
-	"github.com/qdriven/qfluent-cli/pkg/operations"
+	"github.com/qdriven/qfluent-go/pkg/inputs"
+	"github.com/qdriven/qfluent-go/pkg/ioutils"
+	"github.com/qdriven/qfluent-go/pkg/operations"
 	"io/ioutil"
 
 	"gopkg.in/yaml.v2"
@@ -24,7 +24,7 @@ func Read(transformationsFile string) (*Transformations, error) {
 
 func FromSpec(spec transformationsSpec) (*Transformations, error) {
 	return &Transformations{
-		ignore:       types.NewFilePatterns(spec.Ignore),
+		ignore:       ioutils.NewFilePatterns(spec.Ignore),
 		transformers: transformersFromSpec(spec.Transformations),
 		prompters:    inputs.FromSpec(spec.Inputs),
 		userInputs:   make(map[string]inputs.PromptResponse),

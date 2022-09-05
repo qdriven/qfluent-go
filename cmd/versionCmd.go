@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/qdriven/qfluent-cli/internal/version"
+	"github.com/qdriven/qfluent-go/internal/version"
 	"github.com/spf13/cobra"
 )
 
