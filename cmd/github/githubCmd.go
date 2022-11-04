@@ -6,7 +6,7 @@ import (
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/cli/go-gh"
 	"github.com/qdriven/qfluent-go/cmd"
-	gh_api "github.com/qdriven/qfluent-go/internal/github"
+	gh_api "github.com/qdriven/qfluent-go/external/github"
 	"strconv"
 	"strings"
 
@@ -131,14 +131,6 @@ func prettyPrint(i int, repo *gh_api.Repository) string {
 	}
 	return out
 }
-
-//func main() {
-//	cmd := rootCmd()
-//	if err := cmd.Execute(); err != nil {
-//		fmt.Fprintf(os.Stderr, "%s\n", err)
-//		os.Exit(1)
-//	}
-//}
 
 func init() {
 	cmd.RootCmd.AddCommand(ghCommand())
