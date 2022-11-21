@@ -2,11 +2,10 @@ package gh
 
 import (
 	"context"
+	"github.com/google/go-github/v48/github"
 	"io/ioutil"
 	"log"
 	"strings"
-
-	"github.com/google/go-github/v48/github"
 )
 
 type QGithub struct {

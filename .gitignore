@@ -28,3 +28,4 @@ coverage.out
 .envrc
 
 .idea/*
+access_token.txt
