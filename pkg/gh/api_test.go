@@ -2,8 +2,9 @@ package gh
 
 import (
 	"fmt"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 var ghClient = New()
@@ -21,12 +22,13 @@ func TestGetRepoStats(t *testing.T) {
 	fmt.Println(stats, response)
 }
 
-func TestGetStarredRepos(t *testing.T) {
-	starred := ghClient.GetAllStarredRepos(41, 50)
-	print(starred)
-}
-
-func TestGetFollowingUsers(t *testing.T) {
-	users := ghClient.GetAllFollowing(0, 50)
-	print(users)
-}
+//
+//func TestGetStarredRepos(t *testing.T) {
+//	starred := ghClient.GetAllStarredRepos(41, 50)
+//	print(starred)
+//}
+//
+//func TestGetFollowingUsers(t *testing.T) {
+//	users := ghClient.GetAllFollowing(0, 50)
+//	print(users)
+//}

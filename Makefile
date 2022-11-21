@@ -28,7 +28,7 @@ run: ## run the app
 
 .PHONY: fmtcheck
 fmtcheck: ## run gofmt and print detected files
-	@sh -c "'$(CURDIR)/scripts/gofmtcheck.sh'"
+	@sh -c "'$(CURDIR)/scripts/goformat.sh'"
 
 PHONY: test
 test: ## run go tests

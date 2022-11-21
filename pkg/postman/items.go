@@ -98,7 +98,6 @@ func (i *Items) AddItemGroup(name string) (f *Items) {
 
 // MarshalJSON returns the JSON encoding of an Item/ItemGroup.
 func (i Items) MarshalJSON() ([]byte, error) {
-
 	if i.IsGroup() {
 		return json.Marshal(ItemGroup{
 			Name:                    i.Name,

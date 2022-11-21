@@ -388,7 +388,6 @@ func TestAuthMarshalJSON(t *testing.T) {
 }
 
 func TestCreateAuth(t *testing.T) {
-
 	cases := []struct {
 		scenario     string
 		auth         *Auth

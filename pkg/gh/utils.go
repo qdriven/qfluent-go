@@ -2,14 +2,15 @@ package gh
 
 import (
 	"fmt"
-	"github.com/google/go-github/v48/github"
-	"github.com/ogen-go/ogen/json"
 	"io/fs"
 	"io/ioutil"
 	"log"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/google/go-github/v48/github"
+	"github.com/ogen-go/ogen/json"
 )
 
 func ReadTxtRepos(txtRepoPath string) []string {
@@ -21,7 +22,7 @@ func ReadTxtRepos(txtRepoPath string) []string {
 }
 
 func SaveRanking(repos []*github.StarredRepository, topic string) {
-	readme, err := os.OpenFile("README.md", os.O_RDWR|os.O_TRUNC, 0666)
+	readme, err := os.OpenFile("README.md", os.O_RDWR|os.O_TRUNC, 0o666)
 	if err != nil {
 		log.Fatal(err)
 	}

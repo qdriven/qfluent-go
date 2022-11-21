@@ -7,7 +7,6 @@ import (
 )
 
 func TestIsGroup(t *testing.T) {
-
 	cases := []struct {
 		scenario        string
 		item            Items

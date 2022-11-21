@@ -2,10 +2,11 @@ package gh
 
 import (
 	"context"
-	"github.com/google/go-github/v48/github"
 	"io/ioutil"
 	"log"
 	"strings"
+
+	"github.com/google/go-github/v48/github"
 )
 
 type QGithub struct {
@@ -62,7 +63,7 @@ func (q *QGithub) GetAllStarredRepos(from, end int) []*github.StarredRepository 
 		starred := q.GetStarredRepos(i)
 		result = append(result, starred...)
 		WriteStarredRepoToFile(result) // write as wait time
-		//append(result, starred...)
+		// append(result, starred...)
 		if len(starred) < 100 {
 			break
 		}
@@ -85,7 +86,7 @@ func (q *QGithub) GetAllFollowing(from, end int) []*github.User {
 		starred := q.GetFollowing(i)
 		result = append(result, starred...)
 		WriteFollowingUserToFile(result) // write as wait time
-		//append(result, starred...)
+		// append(result, starred...)
 		if len(starred) < 100 {
 			break
 		}

@@ -210,7 +210,6 @@ func unmarshalAuthParam(b []byte) (a []*AuthParam, err error) {
 // MarshalJSON returns the JSON encoding of a Auth.
 // If the version is v2.0.0 it is returned as an object, otherwise as an array (v2.1.0).
 func (a Auth) MarshalJSON() ([]byte, error) {
-
 	if a.version == V200 {
 		return json.Marshal(authV200{
 			Type:   a.Type,

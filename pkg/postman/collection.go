@@ -63,7 +63,6 @@ func (c *Collection) AddItemGroup(name string) (f *Items) {
 
 // Write encodes the Collection struct in JSON and writes it into the provided io.Writer.
 func (c *Collection) Write(w io.Writer, v version) (err error) {
-
 	c.Info.Schema = fmt.Sprintf("https://schema.getpostman.com/json/collection/%s/collection.json", string(v))
 	setVersionForItems(c.Items, v)
 
@@ -97,7 +96,6 @@ func setVersionForItems(items []*Items, v version) {
 
 // ParseCollection parses the content of the provided data stream into a Collection object.
 func ParseCollection(r io.Reader) (c *Collection, err error) {
-
 	err = json.NewDecoder(r).Decode(&c)
 
 	return

@@ -340,7 +340,6 @@ func (suite *CollectionTestSuite) TestAddItemGroupIntoCollection() {
 	suite.Collection.AddItemGroup("another-new-item-group")
 
 	if assert.NotNil(suite.T(), suite.Collection.Items) {
-
 		assert.Equal(
 			suite.T(),
 			[]*Items{
@@ -403,7 +402,6 @@ func (suite *CollectionTestSuite) TestWriteCollection() {
 		tc.testCollection.Write(&buf, V210)
 
 		file, err := ioutil.ReadFile(tc.expectedFile)
-
 		if err != nil {
 			suite.Errorf(err, "Could not open test file")
 		}
