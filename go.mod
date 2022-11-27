@@ -3,9 +3,11 @@ module qfluent-go
 go 1.18
 
 require (
-	github.com/google/go-github/v48 v48.0.0
+	github.com/google/go-github/v48 v48.1.0
 	github.com/mitchellh/go-homedir v1.1.0
+
 	github.com/ogen-go/ogen v0.55.0
+
 	github.com/rs/zerolog v1.28.0
 	github.com/spf13/cobra v1.6.1
 	github.com/spf13/viper v1.14.0
