@@ -6,9 +6,10 @@ import (
 	"fmt"
 	"os"
 	"os/signal"
+	"syscall"
+
 	"qfluent-go/pkg/gosh"
 	"qfluent-go/pkg/gosh/api"
-	"syscall"
 )
 
 func main() {

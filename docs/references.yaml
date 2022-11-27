@@ -1,5 +1,9 @@
 repos:
   - https://github.com/go-faster
-  - https://goa.design/
+
 templates:
   -  https://github.com/chyroc/go-project-template.git
+
+product:
+  - https://goa.design/
+  - https://github.com/DataDog

@@ -10,15 +10,13 @@ import (
 	"os"
 	"path"
 	"plugin"
-	"qfluent-go/pkg/gosh/api"
-
 	"regexp"
 	"strings"
+
+	"qfluent-go/pkg/gosh/api"
 )
 
-var (
-	reCmd = regexp.MustCompile(`\S+`)
-)
+var reCmd = regexp.MustCompile(`\S+`)
 
 type GoShell struct {
 	ctx        context.Context
@@ -77,6 +75,7 @@ func (gosh *GoShell) loadCommands() error {
 	}
 	return nil
 }
+
 func (gosh *GoShell) Open(r *bufio.Reader) {
 	loopCtx := gosh.ctx
 	line := make(chan string)
@@ -113,6 +112,7 @@ func (gosh *GoShell) Open(r *bufio.Reader) {
 		}
 	}
 }
+
 func (gosh *GoShell) Closed() <-chan struct{} {
 	return gosh.closed
 }
@@ -133,6 +133,7 @@ func (gosh *GoShell) handle(ctx context.Context, cmdLine string) (context.Contex
 	}
 	return ctx, errors.New(fmt.Sprintf("unable to parse command line: %s", line))
 }
+
 func listFiles(dir, pattern string) ([]os.FileInfo, error) {
 	files, err := ioutil.ReadDir(dir)
 	if err != nil {

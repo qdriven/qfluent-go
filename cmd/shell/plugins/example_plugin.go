@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"io"
+
 	"qfluent-go/pkg/gosh/api"
 )
 
@@ -20,12 +21,11 @@ type exampleCmd string
 // for plugins that dont contain a command to
 // load, all lines marked with //OP are optional
 // if your plugin adds a command, please fille these out
-func (t exampleCmd) Name() string      { return string(t) }                //OP
-func (t exampleCmd) Usage() string     { return `example` }                //OP
-func (t exampleCmd) ShortDesc() string { return `description of example` } //OP
-func (t exampleCmd) LongDesc() string  { return t.ShortDesc() }            //OP
+func (t exampleCmd) Name() string      { return string(t) }                // OP
+func (t exampleCmd) Usage() string     { return `example` }                // OP
+func (t exampleCmd) ShortDesc() string { return `description of example` } // OP
+func (t exampleCmd) LongDesc() string  { return t.ShortDesc() }            // OP
 func (t exampleCmd) Exec(ctx context.Context, args []string) (context.Context, error) {
-
 	// Put your custom programming here, make sure to
 	// accept and parse the args variable if you need
 	// to!
@@ -47,7 +47,7 @@ func (t *exampleCmds) Init(ctx context.Context) error {
 
 func (t *exampleCmds) Registry() map[string]api.Command {
 	return map[string]api.Command{
-		"example": exampleCmd("example"), //OP
+		"example": exampleCmd("example"), // OP
 	}
 }
 

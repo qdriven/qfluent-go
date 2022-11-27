@@ -6,9 +6,10 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"qfluent-go/pkg/gosh/api"
 	"runtime"
 	"strconv"
+
+	"qfluent-go/pkg/gosh/api"
 )
 
 // helpCmd represents the `help` command
@@ -83,6 +84,7 @@ func (c exitCmd) LongDesc() string { return "" }
 func (c exitCmd) ShortDesc() string {
 	return `exits the interactive shell immediately`
 }
+
 func (c exitCmd) Exec(ctx context.Context, args []string) (context.Context, error) {
 	out := api.GetStdout(ctx)
 	fmt.Fprintln(out, "exiting...")
@@ -99,6 +101,7 @@ func (c promptCmd) LongDesc() string { return "" }
 func (c promptCmd) ShortDesc() string {
 	return `sets a new shell prompt`
 }
+
 func (c promptCmd) Exec(ctx context.Context, args []string) (context.Context, error) {
 	if len(args) < 2 {
 		return ctx, errors.New("unable to set prompt, see usage")
@@ -115,6 +118,7 @@ func (c sysinfoCmd) LongDesc() string { return "" }
 func (c sysinfoCmd) ShortDesc() string {
 	return `sets a new shell prompt`
 }
+
 func (c sysinfoCmd) Exec(ctx context.Context, args []string) (context.Context, error) {
 	out := api.GetStdout(ctx)
 
