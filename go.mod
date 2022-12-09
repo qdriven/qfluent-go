@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/charmbracelet/bubbles v0.14.0
 	github.com/charmbracelet/bubbletea v0.21.0
-	github.com/charmbracelet/lipgloss v0.5.0
+	github.com/charmbracelet/lipgloss v0.6.0
 	github.com/google/go-github/v48 v48.1.0
 	github.com/mccutchen/go-httpbin/v2 v2.5.3
 	github.com/mitchellh/go-homedir v1.1.0
