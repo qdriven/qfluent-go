@@ -38,16 +38,12 @@ test: ## run go tests
 PHONY: clean
 clean: ## clean up environment
 	@rm -rf coverage.out dist/ $(projectname)
-
+	@rm -rf ./bin
 
 PHONY: cover
 cover: ## display test coverage
 	go test -v -race $(shell go list ./... | grep -v /vendor/) -v -coverprofile=coverage.out
 	go tool cover -func=coverage.out
-
-PHONY: fmt
-fmt: ## format go files
-	gofumpt -w -s  .
 
 PHONY: lint
 lint: ## lint go files
@@ -69,3 +65,16 @@ docker-run:
 pre-commit:	## run pre-commit hooks
 	pre-commit run
 
+#.DEFAULT_GOAL := build
+#HAS_UPX := $(shell command -v upx 2> /dev/null)
+
+#.PHONY: build
+#build:
+#		go build -o ./bin/feishu2md main.go
+#ifneq ($(and $(COMPRESS),$(HAS_UPX)),)
+#	upx -9 ./bin/feishu2md
+#endif
+
+.PHONY: format
+format:
+	gofmt -l -w .

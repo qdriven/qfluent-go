@@ -12,8 +12,6 @@ import (
 	"plugin"
 	"regexp"
 	"strings"
-
-	"qfluent-go/pkg/gosh/api"
 )
 
 var reCmd = regexp.MustCompile(`\S+`)
@@ -21,14 +19,14 @@ var reCmd = regexp.MustCompile(`\S+`)
 type GoShell struct {
 	ctx        context.Context
 	pluginsDir string
-	Commands   map[string]api.Command
+	Commands   map[string]Command
 	closed     chan struct{}
 }
 
 func New() *GoShell {
 	return &GoShell{
-		pluginsDir: api.PluginsDir,
-		Commands:   make(map[string]api.Command),
+		pluginsDir: PluginsDir,
+		Commands:   make(map[string]Command),
 		closed:     make(chan struct{}),
 	}
 }
@@ -52,16 +50,16 @@ func (gosh *GoShell) loadCommands() error {
 			fmt.Printf("failed to open plugin %s: %v\n", cmdPlugin.Name(), err)
 			continue
 		}
-		cmdSymbol, err := plug.Lookup(api.CmdSymbolName)
+		cmdSymbol, err := plug.Lookup(CmdSymbolName)
 		if err != nil {
 			fmt.Printf("plugin %s does not export symbol \"%s\"\n",
-				cmdPlugin.Name(), api.CmdSymbolName)
+				cmdPlugin.Name(), CmdSymbolName)
 			continue
 		}
-		commands, ok := cmdSymbol.(api.Commands)
+		commands, ok := cmdSymbol.(Commands)
 		if !ok {
 			fmt.Printf("Symbol %s (from %s) does not implement Commands interface\n",
-				api.CmdSymbolName, cmdPlugin.Name())
+				CmdSymbolName, cmdPlugin.Name())
 			continue
 		}
 		if err := commands.Init(gosh.ctx); err != nil {
@@ -86,7 +84,7 @@ func (gosh *GoShell) Open(r *bufio.Reader) {
 				// TODO: future enhancement is to capture input key by key
 				// to give command granular notification of key events.
 				// This could be used to implement command autocompletion.
-				_, _ = fmt.Fprintf(ctx.Value("gosh.stdout").(io.Writer), "%s ", api.GetPrompt(loopCtx))
+				_, _ = fmt.Fprintf(ctx.Value("gosh.stdout").(io.Writer), "%s ", GetPrompt(loopCtx))
 				line, err := r.ReadString('\n')
 				if err != nil {
 					_, _ = fmt.Fprintf(ctx.Value("gosh.stderr").(io.Writer), "%v\n", err)
