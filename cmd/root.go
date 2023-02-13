@@ -6,8 +6,6 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-
-	"qfluent-go/config"
 )
 
 var RootCmd = &cobra.Command{
@@ -52,5 +50,5 @@ func init() {
 }
 
 func initConfig() {
-	config.InitConfig(appInfo.CfgFile)
+	configs.InitConfig(appInfo.CfgFile)
 }
