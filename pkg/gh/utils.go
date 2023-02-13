@@ -57,7 +57,8 @@ func SaveRanking(repos []*github.StarredRepository, topic string) {
 	_, _ = readme.WriteString(fmt.Sprintf(tail, time.Now().Format(time.RFC3339)))
 }
 
-/**
+/*
+*
 Github URL Pattern: https://github.com/beego/beego
 */
 func ResolveOwnerAndRepoName(gitUrl string) (ownerName, repoName string) {

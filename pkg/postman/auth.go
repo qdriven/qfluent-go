@@ -144,8 +144,8 @@ func (a *Auth) setParams(params []*AuthParam) {
 
 // UnmarshalJSON parses the JSON-encoded data and create an Auth from it.
 // Depending on the Postman Collection version, an auth property can either be an array or an object.
-//    - v2.1.0 : Array
-//    - v2.0.0 : Object
+//   - v2.1.0 : Array
+//   - v2.0.0 : Object
 func (a *Auth) UnmarshalJSON(b []byte) (err error) {
 	var tmp mAuth
 	err = json.Unmarshal(b, &tmp)

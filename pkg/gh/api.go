@@ -30,7 +30,8 @@ func NewByUserNameAndToken(userName, accessToken string) *QGithub {
 	}
 }
 
-/**
+/*
+*
 get access token by access_token.txt
 */
 func (q *QGithub) GetAccessToken(filePath string) string {
