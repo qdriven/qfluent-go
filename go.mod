@@ -7,7 +7,7 @@ require (
 	github.com/google/go-cmp v0.5.9
 	github.com/google/go-github/v48 v48.1.0
 	github.com/itchyny/gojq v0.12.11
-	github.com/mccutchen/go-httpbin/v2 v2.5.3
+	github.com/mccutchen/go-httpbin/v2 v2.5.6
 	github.com/ogen-go/ogen v0.58.0
 	github.com/rs/zerolog v1.28.0
 	github.com/spf13/viper v1.15.0
