@@ -11,8 +11,5 @@ var (
 )
 
 func GetVersion() string {
-	return fmt.Sprintf(`MAJOR_VERSION:%s
-Revision: %s
-OS:%s
-Arch:%s`, MAJOR_VERSION, Revision, runtime.GOOS, runtime.GOARCH)
+	return fmt.Sprintf(`Version:%s Revision: %s OS:%s Arch:%s`, MAJOR_VERSION, Revision, runtime.GOOS, runtime.GOARCH)
 }
