@@ -11,7 +11,7 @@ require (
 	github.com/ogen-go/ogen v0.58.0
 	github.com/rs/zerolog v1.28.0
 	github.com/spf13/viper v1.15.0
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.8.2
 )
 
 require (
