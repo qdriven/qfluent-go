@@ -28,6 +28,10 @@ func ExecShellCommands(jsonFile string, data any) error {
 	jsonBytes, _ := os.ReadFile(jsonFile)
 	var commands = NamedCommands{}
 	json.ToStruct(string(jsonBytes), &commands)
+	return ExecCommands(commands, data)
+}
+
+func ExecCommands(commands NamedCommands, data any) error {
 	for _, namedCommand := range commands.Commands {
 		log.Printf("start execute command: %s,%s", namedCommand.Name, namedCommand.Command)
 		output := tpl.RenderTemplate(namedCommand.Command, data)
