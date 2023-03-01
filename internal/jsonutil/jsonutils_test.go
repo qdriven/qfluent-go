@@ -1,4 +1,4 @@
-package json
+package jsonutil
 
 import (
 	"fmt"
@@ -27,9 +27,9 @@ func TestToJsonString(t *testing.T) {
 		Age:     10,
 		Address: addr,
 	}
-	result := ToJsonStr(&addr)
+	result := ToStructureString(&addr)
 	fmt.Println(result)
-	personStr := ToJsonStr(&person)
+	personStr := ToStructureString(&person)
 	fmt.Println(personStr)
 }
 
