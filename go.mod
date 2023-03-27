@@ -8,16 +8,17 @@ require (
 	github.com/google/go-github/v48 v48.1.0
 	github.com/itchyny/gojq v0.12.11
 	github.com/mccutchen/go-httpbin/v2 v2.5.3
-	github.com/ogen-go/ogen v0.58.0
+	github.com/ogen-go/ogen v0.60.2
 	github.com/rs/zerolog v1.28.0
 	github.com/spf13/viper v1.15.0
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.8.2
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-faster/errors v0.6.1 // indirect
-	github.com/go-faster/jx v0.41.0 // indirect
+	github.com/go-faster/jx v1.0.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
@@ -35,8 +36,8 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
 	golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e // indirect
-	golang.org/x/sys v0.4.0 // indirect
-	golang.org/x/text v0.6.0 // indirect
+	golang.org/x/exp v0.0.0-20230206171751-46f607a40771 // indirect
+	golang.org/x/sys v0.6.0 // indirect
+	golang.org/x/text v0.8.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
