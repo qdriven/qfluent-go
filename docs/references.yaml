@@ -15,5 +15,10 @@ feishu:
 
 orm:
   - https://github.com/ent/ent
-
+  -  https://github.com/cdfmlr/crud.git
+di:
+  - https://github.com/samber/do.git
 utils:
+  - git@github.com:cli/cli.git
+runner:
+  - https://gitee.com/marksirl/go-runner.git
