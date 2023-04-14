@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-type ConfigMap struct {
+type DefaultConfigMap struct {
 }
 
 var (
@@ -22,10 +22,9 @@ func NewDefaultConfig() *viper.Viper {
 	if err := v.ReadInConfig(); err != nil {
 		fmt.Printf("couldn't load config: %s", err)
 		os.Exit(1)
-		fmt.Println(v.AllKeys())
 	}
 	ConfigMapping["DEFAULT"] = v
-	watchConfigChanges(v, &ConfigMap{})
+	watchConfigChanges(v, &DefaultConfigMap{})
 	return v
 }
 
