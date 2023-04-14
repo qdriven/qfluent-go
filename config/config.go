@@ -7,51 +7,59 @@ import (
 	"os"
 )
 
-type WorkSpace struct {
-	ShHome     string `mapstructure:"sh_home"`
-	WorkingDir string `mapstructure:"working_dir"`
+type ConfigMap struct {
 }
 
-type DatabaseConfig struct {
-	Host string `mapstructure:"hostname"`
-	Port int    `mapstructure:"port"`
-	User string `mapstructure:"username"`
-	Pass string `mapstructure:"password"`
+var (
+	ConfigMapping        = map[string]*viper.Viper{}
+	DEFFAULT_CONFIG_FILE = "app.toml"
+)
+
+func NewDefaultConfig() *viper.Viper {
+	v := viper.New()
+	v.SetConfigFile(DEFFAULT_CONFIG_FILE)
+
+	if err := v.ReadInConfig(); err != nil {
+		fmt.Printf("couldn't load config: %s", err)
+		os.Exit(1)
+		fmt.Println(v.AllKeys())
+	}
+	ConfigMapping["DEFAULT"] = v
+	watchConfigChanges(v, &ConfigMap{})
+	return v
 }
 
-type AppConfig struct {
-	Ws WorkSpace      `mapstructure:"ws"`
-	Db DatabaseConfig `mapstructure:"db"`
+func watchConfigChanges(v *viper.Viper, config any) {
+	v.WatchConfig()
+	v.OnConfigChange(func(e fsnotify.Event) {
+		fmt.Println("Config file changed:", e.Name)
+		fmt.Println(v.AllKeys())
+		err := v.Unmarshal(config)
+		if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Println(config)
+	})
 }
 
-func init() {
-	viper.SetConfigFile("app.toml")
-}
-func NewConfig() *AppConfig {
-	if err := viper.ReadInConfig(); err != nil {
+func NewNamedConfig(configFile string, configName string, config any) any {
+	v := viper.New()
+	v.SetConfigFile(configFile)
+
+	if err := v.ReadInConfig(); err != nil {
 		fmt.Printf("couldn't load config: %s", err)
 		os.Exit(1)
 	}
-	config := AppConfig{}
-	if err := viper.Unmarshal(&config); err != nil {
-		panic(fmt.Errorf("unable to decode into struct: %s", err))
+	ConfigMapping[configName] = v
+	err := v.Unmarshal(config)
+	if err != nil {
+		return nil
 	}
-	fmt.Println(config.Ws.WorkingDir, config.Ws.ShHome)
-	watchConfigChanges(&config)
-	return &config
+	fmt.Println(err)
+	watchConfigChanges(v, config)
+	return config
 }
 
-func watchConfigChanges(config *AppConfig) {
-	viper.WatchConfig()
-	viper.OnConfigChange(func(e fsnotify.Event) {
-		fmt.Println("Config file changed:", e.Name)
-
-		// Use viper to update the struct with the new configuration data
-		if err := viper.Unmarshal(&config); err != nil {
-			panic(fmt.Errorf("unable to decode into struct: %s", err))
-		}
-
-		// Print out the updated configuration data
-		fmt.Printf("worksapce: %s\n", config.Ws)
-	})
+func GetViperByName(name string) *viper.Viper {
+	return ConfigMapping[name]
 }
