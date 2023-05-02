@@ -11,7 +11,7 @@ require (
 	github.com/google/go-github/v48 v48.2.0
 	github.com/itchyny/gojq v0.12.12
 	github.com/mccutchen/go-httpbin/v2 v2.6.0
-	github.com/ogen-go/ogen v0.62.0
+	github.com/ogen-go/ogen v0.66.0
 	github.com/rs/zerolog v1.29.1
 	github.com/samber/do v1.6.0
 	github.com/spf13/viper v1.15.0
@@ -63,9 +63,9 @@ require (
 	golang.org/x/arch v0.0.0-20210923205945-b76863e36670 // indirect
 	golang.org/x/crypto v0.5.0 // indirect
 	golang.org/x/exp v0.0.0-20230321023759-10a507213a29 // indirect
-	golang.org/x/net v0.8.0 // indirect
-	golang.org/x/sys v0.6.0 // indirect
-	golang.org/x/text v0.8.0 // indirect
+	golang.org/x/net v0.9.0 // indirect
+	golang.org/x/sys v0.7.0 // indirect
+	golang.org/x/text v0.9.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
