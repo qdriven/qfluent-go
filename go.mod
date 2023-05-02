@@ -9,7 +9,7 @@ require (
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/google/go-cmp v0.5.9
 	github.com/google/go-github/v48 v48.2.0
-	github.com/itchyny/gojq v0.12.11
+	github.com/itchyny/gojq v0.12.12
 	github.com/mccutchen/go-httpbin/v2 v2.6.0
 	github.com/ogen-go/ogen v0.62.0
 	github.com/rs/zerolog v1.28.0
