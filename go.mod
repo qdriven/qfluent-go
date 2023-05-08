@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/gin-gonic/gin v1.9.0
-	github.com/go-openapi/spec v0.20.8
+	github.com/go-openapi/spec v0.20.9
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/google/go-cmp v0.5.9
 	github.com/google/go-github/v48 v48.2.0
