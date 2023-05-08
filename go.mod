@@ -11,7 +11,7 @@ require (
 	github.com/google/go-github/v48 v48.2.0
 	github.com/itchyny/gojq v0.12.12
 	github.com/mccutchen/go-httpbin/v2 v2.6.0
-	github.com/ogen-go/ogen v0.66.0
+	github.com/ogen-go/ogen v0.67.0
 	github.com/rs/zerolog v1.29.1
 	github.com/samber/do v1.6.0
 	github.com/spf13/viper v1.15.0
