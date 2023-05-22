@@ -15,7 +15,7 @@ require (
 	github.com/rs/zerolog v1.29.1
 	github.com/samber/do v1.6.0
 	github.com/spf13/viper v1.15.0
-	github.com/stretchr/testify v1.8.2
+	github.com/stretchr/testify v1.8.3
 	gopkg.in/yaml.v3 v3.0.1
 )
 
