@@ -4,7 +4,7 @@ import (
 	"io"
 	"log"
 	"os"
-	"qfluent-go/internal/json"
+	"qfluent-go/internal/jsonutil"
 	"qfluent-go/internal/tpl"
 )
 
@@ -27,7 +27,7 @@ func ExecShellCommand(cmd string) (int, error) {
 func ExecShellCommands(jsonFile string, data any) error {
 	jsonBytes, _ := os.ReadFile(jsonFile)
 	var commands = NamedCommands{}
-	json.ToStruct(string(jsonBytes), &commands)
+	jsonutil.ToStruct(string(jsonBytes), &commands)
 	return ExecCommands(commands, data)
 }
 
