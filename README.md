@@ -37,3 +37,7 @@ Software QA Daily Golang toolkits.
 ## DI 
 
 - [do](github.com/samber/do) do - Dependency Injection
+- https://github.com/rwxrob/dot.git
+## TODO:
+
+- []命令行+Proc Monitor 做成最简单监控
