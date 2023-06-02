@@ -6,7 +6,10 @@ import (
 	"os"
 )
 
-func ToObject(jsonstr string, any any) {
+type JsonUtil struct {
+}
+
+func (j JsonUtil) ToObject(jsonstr string, any any) {
 
 	err := json.Unmarshal([]byte(jsonstr), &any)
 	if err != nil {
@@ -14,7 +17,7 @@ func ToObject(jsonstr string, any any) {
 	}
 }
 
-func ToJsonString(any any) string {
+func (j JsonUtil) ToStructuredString(any any) string {
 	jsonBytes, err := json.Marshal(any)
 	if err != nil {
 		log.Fatal("convert json str failed", any)
@@ -23,10 +26,16 @@ func ToJsonString(any any) string {
 	return string(jsonBytes)
 }
 
-func ToJsonStringFromFile(jsonFile string, any any) {
-	jsonstr, err := os.ReadFile(jsonFile)
+func (j JsonUtil) FileContentToObject(filePath string, any any) {
+	jsonstr, err := os.ReadFile(filePath)
 	err = json.Unmarshal([]byte(jsonstr), &any)
 	if err != nil {
 		log.Fatal("convert json str failed", any)
 	}
 }
+
+func NewJsonUtil() *JsonUtil {
+	return &JsonUtil{}
+}
+
+var JsonConverter = NewJsonUtil()

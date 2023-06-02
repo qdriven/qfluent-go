@@ -34,3 +34,6 @@ Software QA Daily Golang toolkits.
   - CodeQL Analysis
 
 
+## DI 
+
+- [do](github.com/samber/do) do - Dependency Injection

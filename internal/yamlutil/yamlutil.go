@@ -6,7 +6,10 @@ import (
 	"os"
 )
 
-func ToObject(yamlStr string, any any) {
+type YamlUtil struct {
+}
+
+func (y YamlUtil) ToObject(yamlStr string, any any) {
 
 	err := yaml.Unmarshal([]byte(yamlStr), &any)
 	if err != nil {
@@ -14,7 +17,7 @@ func ToObject(yamlStr string, any any) {
 	}
 }
 
-func ToYamlString(any any) string {
+func (y YamlUtil) ToStructuredString(any any) string {
 	jsonBytes, err := yaml.Marshal(any)
 	if err != nil {
 		log.Fatal("convert json str failed", any)
@@ -23,10 +26,12 @@ func ToYamlString(any any) string {
 	return string(jsonBytes)
 }
 
-func YamlFileToObject(yamlFile string, any any) {
-	yamlStr, err := os.ReadFile(yamlFile)
+func (y YamlUtil) FileContentToObject(filePaht string, any any) {
+	yamlStr, err := os.ReadFile(filePaht)
 	err = yaml.Unmarshal(yamlStr, &any)
 	if err != nil {
 		log.Fatal("convert yaml str failed", any)
 	}
 }
+
+var YamlConverter = &YamlUtil{}
