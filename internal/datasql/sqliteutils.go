@@ -1,12 +1,11 @@
-package main
+package datasql
 
 import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"strings"
-
 	"github.com/multiprocessio/datastation/runner"
+	"strings"
 )
 
 type SQLiteResultItemWriter struct {

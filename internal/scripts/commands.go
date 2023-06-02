@@ -27,7 +27,7 @@ func ExecShellCommand(cmd string) (int, error) {
 func ExecShellCommands(jsonFile string, data any) error {
 	jsonBytes, _ := os.ReadFile(jsonFile)
 	var commands = NamedCommands{}
-	jsonutil.ToStruct(string(jsonBytes), &commands)
+	jsonutil.ToObject(string(jsonBytes), &commands)
 	return ExecCommands(commands, data)
 }
 

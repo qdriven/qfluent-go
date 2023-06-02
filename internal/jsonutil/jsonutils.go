@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func ToStruct(jsonstr string, any any) {
+func ToObject(jsonstr string, any any) {
 
 	err := json.Unmarshal([]byte(jsonstr), &any)
 	if err != nil {
@@ -14,7 +14,7 @@ func ToStruct(jsonstr string, any any) {
 	}
 }
 
-func ToStructureString(any any) string {
+func ToJsonString(any any) string {
 	jsonBytes, err := json.Marshal(any)
 	if err != nil {
 		log.Fatal("convert json str failed", any)
@@ -23,7 +23,7 @@ func ToStructureString(any any) string {
 	return string(jsonBytes)
 }
 
-func ToStructFromFile(jsonFile string, any any) {
+func ToJsonStringFromFile(jsonFile string, any any) {
 	jsonstr, err := os.ReadFile(jsonFile)
 	err = json.Unmarshal([]byte(jsonstr), &any)
 	if err != nil {

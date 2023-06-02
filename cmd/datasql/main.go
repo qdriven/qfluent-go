@@ -1,5 +1,5 @@
 package main
-//
+// https://github.com/multiprocessio/dsq.git
 import (
 	"crypto/sha1"
 	"encoding/hex"
