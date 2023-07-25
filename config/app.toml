@@ -1,6 +1,0 @@
-free_form="test"
-
-[ws]
-sh_home = "/bin/sh"
-working_dir = "."
-
