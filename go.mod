@@ -7,7 +7,7 @@ require (
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/google/go-cmp v0.5.9
 	github.com/google/go-github/v48 v48.2.0
-	github.com/google/uuid v1.3.0
+	github.com/google/uuid v1.3.1
 	github.com/grokify/spectrum v1.16.9
 	github.com/itchyny/gojq v0.12.13
 	github.com/multiprocessio/datastation/runner v0.0.0-20221019004540-4e72a6e0af28
