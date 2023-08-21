@@ -1,0 +1,17 @@
+templates:
+  - name: go-moduel
+    url: https://github.com/octomation/go-module/
+    rating: 4
+logging:
+  - name: logrus
+    url: https://github.com/sirupsen/logrus
+    rating: 3
+  - name: zerolog
+    url: https://github.com/rs/zerolog
+    rating: 4
+  - name: zap
+    url: https://github.com/uber-go/zap
+    rating: 4.5
+
+framework:
+  - https://github.com/cdfmlr/crud.git
