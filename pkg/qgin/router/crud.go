@@ -55,6 +55,14 @@ func Crud[T orm.Model](base gin.IRouter, relativePath string, options ...CrudOpt
 	return group
 }
 
+func RegisterApiByModel[T orm.Model](
+	base gin.IRouter,
+	relativePath string,
+	options ...CrudOption,
+) gin.IRouter {
+	return Crud[T](base, relativePath, options...)
+}
+
 // CrudOption is options to construct the router group.
 //
 // By adding GetNested, CreateNested, DeleteNested to Crud,
