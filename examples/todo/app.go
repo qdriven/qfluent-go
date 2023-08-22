@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/qdriven/qfluent-go/internal/orm"
-	"github.com/qdriven/qfluent-go/internal/router"
+	"github.com/qdriven/qfluent-go/pkg/orm"
+	"github.com/qdriven/qfluent-go/pkg/qgin/router"
 )
 
 type Todo struct {

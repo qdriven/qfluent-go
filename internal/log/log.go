@@ -3,8 +3,8 @@ package log
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/qdriven/qfluent-go/pkg/qgin"
-	"github.com/qdriven/qfluent-go/pkg/qgorm"
+	"github.com/qdriven/qfluent-go/internal/log/qgin"
+	"github.com/qdriven/qfluent-go/internal/log/qgorm"
 	"github.com/sirupsen/logrus"
 )
 
