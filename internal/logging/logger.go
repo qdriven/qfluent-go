@@ -3,8 +3,8 @@ package log
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/qdriven/qfluent-go/internal/log/qgin"
-	"github.com/qdriven/qfluent-go/internal/log/qgorm"
+	"github.com/qdriven/qfluent-go/internal/log/gorm"
+
 	"github.com/sirupsen/logrus"
 )
 
@@ -24,10 +24,10 @@ const (
 var Logger = logrus.New()
 
 // Logger4Gorm is the wrapped Logger instance for Gorm
-var Logger4Gorm *qgorm.Logger
+var Logger4Gorm *gorm.Logger
 
-// Logger4Gin is a qgin middleware for Logger
-var Logger4Gin gin.HandlerFunc
+// Logger4Gin is a gin middleware for Logger
+var Logger4Gin *gin.HandlerFunc
 
 // ZoneLogger creates a new logger entry with field zone=name
 func ZoneLogger(name string) *logrus.Entry {
@@ -43,9 +43,6 @@ func UseLogger(logger *logrus.Logger, options ...LoggerOption) {
 	for _, option := range options {
 		option(logger)
 	}
-
-	Logger4Gorm = qgorm.Use(ZoneLogger("crud/db"))
-	Logger4Gin = qgin.Logger(ZoneLogger("crud/http"))
 }
 
 // LoggerOption is a function that can be used to configure the global Logger

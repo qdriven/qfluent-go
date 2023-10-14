@@ -1,4 +1,4 @@
-package qgin
+package gin
 
 import (
 	"fmt"
@@ -9,10 +9,12 @@ import (
 	"time"
 )
 
-// Logger is the logrus logger handler
+// alterantive: https://github.com/rs/zerolog
+// Use is the logrus logger handler
 //
-// FROM: github.com/toorop/qgin-logrus
-func Logger(logger *logrus.Entry, notLogged ...string) gin.HandlerFunc {
+// FROM: github.com/toorop/gin-logrus
+
+func IpLogger(logger *logrus.Entry, notLogged ...string) gin.HandlerFunc {
 	hostname, err := os.Hostname()
 	if err != nil {
 		hostname = "host"

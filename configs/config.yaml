@@ -1,4 +1,4 @@
-# github.com/flipped-aurora/qgin-vue-admin/server Global Configuration
+# github.com/flipped-aurora/gin-vue-admin/server Global Configuration
 
 # jwt configuration
 jwt:
@@ -11,7 +11,7 @@ zap:
   level: info
   format: console
   prefix: "[qfluent-go]"
-  director: log
+  director: logging
   show-line: true
   encode-level: LowercaseColorLevelEncoder
   stacktrace-key: stacktrace
@@ -193,7 +193,7 @@ aws-s3:
   secret-id: your-secret-id
   secret-key: your-secret-key
   base-url: https://gin.vue.admin
-  path-prefix: github.com/flipped-aurora/qgin-vue-admin/server
+  path-prefix: github.com/flipped-aurora/gin-vue-admin/server
 
 # huawei obs configuration
 hua-wei-obs:

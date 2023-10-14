@@ -1,4 +1,4 @@
-package qgorm
+package gorm
 
 import (
 	"context"
