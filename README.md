@@ -1,5 +1,13 @@
 # qfluent-go
 
+## Overview
+
+- core: 
+  - configuration
+  - logging
+  - database
+  - utils
+
 What to deal with in Software QA Daily work:
 1. Date Handling
    * JSON/YAML/EXCEL
@@ -41,3 +49,8 @@ Software QA Daily Golang toolkits.
 ## TODO:
 
 - []命令行+Proc Monitor 做成最简单监控
+
+## References
+
+- [][reflections](https://github.com/oleiade/reflections#documentation)
+- [][tools]()

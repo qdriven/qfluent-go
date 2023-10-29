@@ -1,80 +1,32 @@
-projectname?=qfluent
-default: help
+#include .env.example
+#export
 
-.PHONY: help
-help:
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+LOCAL_BIN:=$(CURDIR)/bin
+PATH:=$(LOCAL_BIN):$(PATH)
 
 .PHONY: build
 build:
-	@go build -ldflags "-X main.version=$(shell git describe --abbrev=0 --tags)" -o $(projectname)
-
-.PHONY: init
-init:
-ifeq ($(shell uname -s),Darwin)
-	@grep -r -l qfluent-go * .goreleaser.yml | xargs sed -i "" "s/qfluent-go/$$(basename `git rev-parse --show-toplevel`)/"
-else
-	@grep -r -l qfluent-go * .goreleaser.yml | xargs sed -i "s/qfluent-go/$$(basename `git rev-parse --show-toplevel`)/"
-endif
-
-
-.PHONY: install
-install: ## install golang binary
-	@go install -ldflags "-X main.version=$(shell git describe --abbrev=0 --tags)"
-
-.PHONY: run
-run: ## run the app
-	@go run -ldflags "-X main.version=$(shell git describe --abbrev=0 --tags)"  main.go
-
-.PHONY: fmtcheck
-fmtcheck: ## run gofmt and print detected files
-	@sh -c "'$(CURDIR)/ci/scripts/goformat.sh'"
+	# @go build -ldflags "-X main.version=$(shell git describe --abbrev=0 --tags)" -o $(projectname)
+	go build cmd/fluent.go
 
 PHONY: test
 test: ## run go tests
 	go test -v ./...
 
 
-PHONY: clean
-clean: ## clean up environment
-	@rm -rf coverage.out dist/ $(projectname)
-	@rm -rf ./bin
+integration-test: ### run integration-test
+	go clean -testcache && go test -v ./integration-test/...
+.PHONY: integration-test
 
-PHONY: cover
-cover: ## display test coverage
-	go test -v -race $(shell go list ./... | grep -v /vendor/) -v -coverprofile=coverage.out
-	go tool cover -func=coverage.out
 
-PHONY: lint
-lint: ## lint go files
-	golangci-lint run -c .golang-ci.yml
-
-PHONY: lint-fix
-lint-fix: ## fix
-	golangci-lint run -c .golang-ci.yml --fix
-
-.PHONY: docker-build
-docker-build: ## dockerize golang application
-	@docker build --tag $(projectname) .
-
-.PHONY: docker-run
-docker-run:
-	@docker run $(projectname)
-
-.PHONY: pre-commit
-pre-commit:	## run pre-commit hooks
-	pre-commit run
-
-#.DEFAULT_GOAL := build
-#HAS_UPX := $(shell command -v upx 2> /dev/null)
-
-#.PHONY: build
-#build:
-#		go build -o ./bin/feishu2md main.go
-#ifneq ($(and $(COMPRESS),$(HAS_UPX)),)
-#	upx -9 ./bin/feishu2md
-#endif
+.PHONY: build-cli
+build-cli:
+	go build cmd/fluent.go
 
 .PHONY: format
 format:
 	gofmt -l -w .
+
+.PHONY: fmtcheck
+fmtcheck: ## run gofmt and print detected files
+	@sh -c "'$(CURDIR)/ci/scripts/goformat.sh'"

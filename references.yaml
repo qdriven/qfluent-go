@@ -1,0 +1,29 @@
+templates:
+  - name: go-module
+    url: https://github.com/octomation/go-module/
+    rating: 4
+logging:
+  - name: logrus
+    url: https://github.com/sirupsen/logrus
+    rating: 3
+  - name: zerolog
+    url: https://github.com/rs/zerolog
+    rating: 4
+  - name: zap
+    url: https://github.com/uber-go/zap
+    rating: 4.5
+
+framework:
+  - https://github.com/cdfmlr/crud.git
+
+repos:
+  - https://github.com/sagikazarmark/modern-go-application.git
+  - https://github.com/tmc/langchaingo
+  - https://github.com/go-skynet/LocalAI
+  - https://github.com/jmorganca/ollama
+  - https://github.com/go-aie/gptbot
+  - https://github.com/cornelk/llama-go
+  - https://github.com/gotzmann/llama.go
+  - https://github.com/yalue/onnxruntime_go
+orgs:
+  - https://github.com/gookit
