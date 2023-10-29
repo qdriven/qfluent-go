@@ -1,7 +1,0 @@
-DB:
-  Driver: sqlite
-  DSN: "./test.db"
-HTTP:
-  Addr: ":8080"
-LogLevel: info
-Name: Test Config

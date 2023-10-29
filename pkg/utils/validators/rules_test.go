@@ -1,24 +1,25 @@
 package validators
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
+
+type DemoModel struct {
+	Name     string
+	Page     int
+	PageSize int
+}
 
 func TestVerify(t *testing.T) {
-	type args struct {
-		st      interface{}
-		roleMap Rules
+	DemoModelRules := Rules{"Page": {NotEmpty()}, "PageSize": {NotEmpty()}, "Name": {NotEmpty()}}
+	testDemoModel := DemoModel{
+		Name:     "test",
+		Page:     0,
+		PageSize: 0,
 	}
-	tests := []struct {
-		name    string
-		args    args
-		wantErr bool
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if err := Verify(tt.args.st, tt.args.roleMap); (err != nil) != tt.wantErr {
-				t.Errorf("Verify() error = %v, wantErr %v", err, tt.wantErr)
-			}
-		})
+	err := Verify(testDemoModel, DemoModelRules)
+	if err == nil {
+		fmt.Println(err)
 	}
 }

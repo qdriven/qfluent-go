@@ -1,29 +1,16 @@
 package utils
 
-import "testing"
+import (
+	"fmt"
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func TestDirectoryExist(t *testing.T) {
-	type args struct {
-		path string
+	fs, err := DirectoryExist("./fs.go")
+	if err != nil {
+		fmt.Println(err)
 	}
-	tests := []struct {
-		name    string
-		args    args
-		want    bool
-		wantErr bool
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got, err := DirectoryExist(tt.args.path)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("DirectoryExist() error = %v, wantErr %v", err, tt.wantErr)
-				return
-			}
-			if got != tt.want {
-				t.Errorf("DirectoryExist() got = %v, want %v", got, tt.want)
-			}
-		})
-	}
+	fs, _ = DirectoryExist("./tmp")
+	assert.NotNil(t, fs)
 }

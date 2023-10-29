@@ -1,5 +1,13 @@
 # qfluent-go
 
+## Overview
+
+- core: 
+  - configuration
+  - logging
+  - database
+  - utils
+
 What to deal with in Software QA Daily work:
 1. Date Handling
    * JSON/YAML/EXCEL

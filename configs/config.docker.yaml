@@ -111,14 +111,14 @@ autocode:
   root: ""
   server: /server
   server-plug: /plugin/%s
-  server-api: /api/v1/%s
+  server-api: /app/v1/%s
   server-initialize: /initialize
   server-model: /model/%s
   server-request: /model/%s/request/
   server-router: /router/%s
   server-service: /service/%s
   web: /web/src
-  web-api: /api
+  web-api: /app
   web-form: /view
   web-table: /view
 
