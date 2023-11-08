@@ -32,9 +32,7 @@ func NewAppConfig(filePath any) (*AppConfig, error) {
 	return appConfig, nil
 }
 
-func DefaultAppConfig() (*AppConfig, error) {
-	return NewAppConfig(DefaultConfigFile)
-}
+var DefaultAppConfig, _ = NewAppConfig(DefaultConfigFile)
 
 func (a *AppConfig) ToStruct(toStruct any) {
 	err := a.Viper.Unmarshal(toStruct)
