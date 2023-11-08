@@ -1,42 +1,13 @@
-package config
+# Configuration
 
-import (
-	"fmt"
-	"github.com/stretchr/testify/assert"
-	"testing"
-)
+- Read Configuration From File
+- Read Configuration From Model
+- Write Configuration To File
+- Write Configuration To Model
 
-// `mapstructure:",squash"` is required for embedded structs
-type testConfig struct {
-	BaseConfig `mapstructure:"core"`
-	Name       string
-}
+## Usage
 
-type AnotherConfig struct {
-	Desc string
-	Misc string
-	Name string
-}
-
-var testConfigInstance = testConfig{
-	BaseConfig: BaseConfig{
-		DB: DBConfig{
-			Driver: "sqlite",
-			DSN:    "./test.db",
-		},
-		HTTP: HTTPConfig{
-			Address: ":8080",
-		},
-		LogLevel: "info",
-	},
-	Name: "Test Config",
-}
-
-var AnotherConfigInstance = &AnotherConfig{
-	Desc: "desc",
-	Misc: DefaultConfigFile,
-	Name: ConfigEvnPrefix,
-}
+```go
 
 // Test Default Configuration
 func TestReadConfigurationFromModelAndWriteToFile(t *testing.T) {
@@ -61,3 +32,5 @@ func TestReadConfigurationFromFileAndWriteToFile(t *testing.T) {
 
 	fmt.Println(config)
 }
+
+```
