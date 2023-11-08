@@ -3,6 +3,8 @@ package config
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
+	"github.com/fsnotify/fsnotify"
 	"github.com/qdriven/qfluent-go/pkg/utils"
 	"github.com/spf13/viper"
 	"log/slog"
@@ -59,4 +61,15 @@ func (a *AppConfig) WriteConfig(filePath string) {
 		_ = a.Viper.SafeWriteConfigAs(a.SavedConfigFile)
 		return
 	}
+}
+
+// Watched Changed Overtime to update, it is dangerous operations
+func (a *AppConfig) WatchConfigChanges() {
+	a.Viper.WatchConfig()
+	a.Viper.OnConfigChange(func(e fsnotify.Event) {
+		fmt.Println("Config file changed:", e.Name)
+		if err := a.Viper.ReadInConfig(); err != nil {
+			fmt.Printf("couldn't load config: %s", err)
+		}
+	})
 }
