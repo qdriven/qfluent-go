@@ -1,0 +1,11 @@
+{
+  "db": {
+    "driver": "sqlite",
+    "dsn": "./test.db"
+  },
+  "http": {
+    "address": ":8080"
+  },
+  "loglevel": "info",
+  "name": "Test Config"
+}

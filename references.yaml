@@ -25,5 +25,6 @@ repos:
   - https://github.com/cornelk/llama-go
   - https://github.com/gotzmann/llama.go
   - https://github.com/yalue/onnxruntime_go
-orgs:
+
+org:
   - https://github.com/gookit
