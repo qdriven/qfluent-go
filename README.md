@@ -27,7 +27,8 @@ Software QA Daily Golang toolkits.
 ## Features: starter 
 
 starter, a cli app to create project based on template repo 
-[how-to](./docs/features/starter.md)
+
+***[how-to](./docs/features/starter.md)***
 
 
 
