@@ -16,6 +16,7 @@ logging:
 framework:
   - https://github.com/cdfmlr/crud.git
   - https://github.com/goccy
+  - https://github.com/rest-go
 repos:
   - https://github.com/sagikazarmark/modern-go-application.git
   - https://github.com/tmc/langchaingo
