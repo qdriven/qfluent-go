@@ -4,10 +4,11 @@
 LOCAL_BIN:=$(CURDIR)/bin
 PATH:=$(LOCAL_BIN):$(PATH)
 
-.PHONY: build
-build:
-	# @go build -ldflags "-X main.version=$(shell git describe --abbrev=0 --tags)" -o $(projectname)
+.PHONY: build-fluent
+build-fluent:
+	# @go build -ldflags "-X main.version=$(shell git describe --abbrev=0 --tags)" -o fluent
 	go build cmd/fluent.go
+
 
 PHONY: test
 test: ## run go tests

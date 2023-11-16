@@ -15,7 +15,7 @@ logging:
 
 framework:
   - https://github.com/cdfmlr/crud.git
-
+  - https://github.com/goccy
 repos:
   - https://github.com/sagikazarmark/modern-go-application.git
   - https://github.com/tmc/langchaingo
@@ -25,9 +25,22 @@ repos:
   - https://github.com/cornelk/llama-go
   - https://github.com/gotzmann/llama.go
   - https://github.com/yalue/onnxruntime_go
-
+  - https://github.com/gookit/goutil
+  - https://github.com/goccy/go-yaml
+  - https://github.com/ndaba1/gommander
+toolkits:
+  - https://github.com/samber/lo
+  - https://github.com/qdriven/pkg.git
+  - https://github.com/KSpaceer/yamly
+tutorials:
+  - https://github.com/inancgumus/learngo.git
+  - https://github.com/teivah/100-go-mistakes.git
+  - https://github.com/darjun/go-daily-lib.git
+  - https://github.com/google/go-github.git
+  - https://github.com/thoas/go-funk.git
+  - https://github.com/palantir/pkg.git
+  - https://www.golinuxcloud.com/golang-parse-yaml-file/
 org:
   - https://github.com/gookit
-
 cli:
   - https://github.com/go-nunu/nunu.git

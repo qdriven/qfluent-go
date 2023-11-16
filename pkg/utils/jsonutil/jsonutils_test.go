@@ -16,6 +16,15 @@ type Address struct {
 	ZipCode  string `json:"zipCode"`
 }
 
+type Starter struct {
+	Starters []Command `yaml:"starters" mapstructure:"starters" json:"starters"`
+}
+type Command struct {
+	Name     string   `yaml:"name" mapstructure:"name" json:"name"`
+	Desc     string   `yaml:"desc" mapstructure:"desc" json:"desc"`
+	Commands []string `yaml:"commands" mapstructure:"commands" json:"commands"`
+}
+
 /*
 *  What's different between & and *
  */
@@ -27,9 +36,9 @@ func TestToJsonString(t *testing.T) {
 		Age:     10,
 		Address: addr,
 	}
-	result := ToStructureString(&addr)
+	result := ToString(&addr)
 	fmt.Println(result)
-	personStr := ToStructureString(&person)
+	personStr := ToString(&person)
 	fmt.Println(personStr)
 }
 
@@ -38,5 +47,10 @@ func TestToStruct(t *testing.T) {
 	p := &Person{}
 	ToStruct(jsonStr, p)
 	fmt.Println(p.Age, p.Name, p.Address.ZipCode, p.Address.Location)
+}
 
+func TestToStructFromFile(t *testing.T) {
+	var infos = &Starter{}
+	ToStructFromFile("starter.json", &infos)
+	fmt.Println(infos)
 }

@@ -3,19 +3,21 @@ package shell
 import (
 	"github.com/qdriven/qfluent-go/pkg/utils"
 	"github.com/qdriven/qfluent-go/pkg/utils/jsonutil"
+	"github.com/samber/lo"
 	"io"
 	"log"
 	"log/slog"
 	"os"
 )
 
-type NamedCommand struct {
-	Name    string `json:"name"`
-	Command string `json:"command"`
-	Help    string `json: "help"`
+type ActionSet struct {
+	Actions []NamedAction `json:"actions"`
 }
-type Commands struct {
-	Commands []NamedCommand `json:"commands"`
+
+type NamedAction struct {
+	Name     string   `yaml:"name" mapstructure:"name" json:"name"`
+	Desc     string   `yaml:"desc" mapstructure:"desc" json:"desc"`
+	Commands []string `yaml:"commands" mapstructure:"commands" json:"commands"`
 }
 
 func ExecShellCommand(cmd string) (int, error) {
@@ -25,21 +27,58 @@ func ExecShellCommand(cmd string) (int, error) {
 		}).Stdout()
 }
 
-func ExecShellCommands(jsonFile string, data any) error {
+func ExecShellCommands(jsonFile string, data any) {
 	jsonBytes, err := os.ReadFile(jsonFile)
 	if err != nil {
 		slog.Error("error when read file", err)
+		return
 	}
 
-	var commands = &Commands{}
+	var commands = &ActionSet{}
 	jsonutil.ToStruct(string(jsonBytes), &commands)
-	for _, command := range commands.Commands {
-		output := utils.RenderTemplate(command.Command, data)
-		_, err := ExecShellCommand(output)
-		if err != nil {
-			log.Fatal(err)
-			return err
-		}
+	for _, namedAction := range commands.Actions {
+		lo.ForEach(namedAction.Commands, func(command string, index int) {
+			output := command
+			if data != nil {
+				output = utils.RenderTemplate(command, data)
+			}
+			_, err := ExecShellCommand(output)
+			if err != nil {
+				slog.Error("execute command set failed,", err)
+				return
+			}
+		})
 	}
-	return nil
+}
+
+func LoadCommands(configPath string) *ActionSet {
+	actions := &ActionSet{}
+	jsonutil.ToStructFromFile(configPath, &actions)
+	return actions
+}
+
+func (s *ActionSet) GetAvailableActionNames() []string {
+	var result []string
+	lo.ForEach(s.Actions, func(command NamedAction, index int) {
+		result = append(result, command.Name)
+	})
+	return result
+}
+
+func (s *ActionSet) GetNamedActionByName(name string) NamedAction {
+	result := lo.Filter(s.Actions, func(item NamedAction, index int) bool {
+		return item.Name == name
+	})
+	return result[0]
+}
+
+func (s *ActionSet) ExecuteActionByName(name string) {
+	ExecAction(s.GetNamedActionByName(name))
+}
+
+func ExecAction(action NamedAction) {
+	slog.Info("start to execute command: ", action.Name, action.Desc)
+	lo.ForEach(action.Commands, func(item string, index int) {
+		_, _ = ExecShellCommand(item)
+	})
 }

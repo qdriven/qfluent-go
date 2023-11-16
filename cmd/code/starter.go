@@ -3,33 +3,22 @@ package code
 import (
 	"github.com/qdriven/qfluent-go/pkg/utils/shell"
 	"github.com/spf13/cobra"
+	"strings"
 )
 
-func createPythonStartProject() {
-	command := "cookiecutter https://github.com/fluent-qa/fluentqa-pytpl.git --no-input"
-	_, _ = shell.ExecShellCommand(command)
-
-}
-
-func CreateStartProject(category string) {
-	if category == "python" {
-		createPythonStartProject()
-	}
-}
+var actions = shell.LoadCommands("starters.json")
 
 var (
-	AvailableStarter = []string{
-		"python",
-	}
-	StarterCmd = &cobra.Command{
+	AvailableStarter = actions.GetAvailableActionNames()
+	StarterCmd       = &cobra.Command{
 		Use:       "starter",
-		Short:     "fluent start [python,go,java]",
-		Long:      "fluent start [python,go,java]",
-		Example:   "fluent start python",
+		Short:     "fluent start " + strings.Join(AvailableStarter, ","),
+		Long:      "fluent start " + strings.Join(AvailableStarter, ","),
+		Example:   "fluent start " + AvailableStarter[0],
 		ValidArgs: AvailableStarter,
 		Run: func(cmd *cobra.Command, args []string) {
 			category := args[0]
-			CreateStartProject(category)
+			actions.ExecuteActionByName(category)
 		},
 	}
 )
