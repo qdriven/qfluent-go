@@ -1,6 +1,0 @@
-starters:
-  - name: python
-    commands:
-      - git clone .....
-      - .....
-    desc: what's this command for

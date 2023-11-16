@@ -1,9 +1,0 @@
-{
-  "commands": [
-    {
-      "name": "git help",
-      "command": "git --help",
-      "help": "descriptions"
-    }
-  ]
-}

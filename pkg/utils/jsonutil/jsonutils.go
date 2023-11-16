@@ -16,7 +16,7 @@ func ToStruct(jsonstr string, any any) {
 	}
 }
 
-func ToStructureString(any any) string {
+func ToString(any any) string {
 	jsonBytes, err := json.Marshal(any)
 	if err != nil {
 		log.Fatal("convert json str failed", any)
@@ -25,10 +25,10 @@ func ToStructureString(any any) string {
 	return string(jsonBytes)
 }
 
-func ToStructFromFile(jsonFile string, any any) {
-	jsonstr, err := os.ReadFile(jsonFile)
-	err = json.Unmarshal([]byte(jsonstr), &any)
+func ToStructFromFile(jsonFile string, data any) {
+	jsonBytes, err := os.ReadFile(jsonFile)
 	if err != nil {
-		log.Fatal("convert json str failed", any)
+		slog.Error("read json failed", err)
 	}
+	ToStruct(string(jsonBytes), &data)
 }
