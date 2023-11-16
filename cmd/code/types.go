@@ -1,9 +1,5 @@
 package code
 
-import "github.com/qdriven/qfluent-go/pkg/utils/shell"
-
-var actions = shell.LoadCommands("starters.json")
-
 type StarterSet struct {
 	Starters []Command `yaml:"starters" mapstructure:"starters" json:"starters"`
 }

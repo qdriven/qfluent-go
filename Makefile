@@ -9,6 +9,10 @@ build:
 	# @go build -ldflags "-X main.version=$(shell git describe --abbrev=0 --tags)" -o $(projectname)
 	go build cmd/fluent.go
 
+.PHONY: build-fluent
+build-fluent:
+	go build -ldflags "-X main.version=$(shell git describe --abbrev=0 --tags)" -o fluent
+
 PHONY: test
 test: ## run go tests
 	go test -v ./...
