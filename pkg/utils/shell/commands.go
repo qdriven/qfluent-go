@@ -77,7 +77,7 @@ func (s *ActionSet) ExecuteActionByName(name string) {
 }
 
 func ExecAction(action NamedAction) {
-	slog.Info("start to execute command %s for %s ", action.Name, action.Desc)
+	slog.Info("start to execute command: ", action.Name, action.Desc)
 	lo.ForEach(action.Commands, func(item string, index int) {
 		_, _ = ExecShellCommand(item)
 	})
