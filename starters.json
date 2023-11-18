@@ -4,7 +4,18 @@
       "name": "java",
       "desc": "Create Java Template Project",
       "commands": [
-        "git clone https://github.com/fluent-qa/fluent-java-tpl"
+        "git clone https://github.com/fluent-qa/fluent-java-tpl",
+        "cd fluent-java-tpl",
+        "mv .git git_bnk"
+      ]
+    },
+    {
+      "name": "ts-lib",
+      "desc": "Create typescript lib Template Project",
+      "commands": [
+        "git clone https://github.com/fluent-qa/ts-lib-starter",
+        "cd ts-lib-starter",
+        "mv .git git_bnk"
       ]
     },
     {
