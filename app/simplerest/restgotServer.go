@@ -20,14 +20,14 @@ func RunRestGoAdminSqliteServer() {
 }
 
 func RunRestGoAuthSqliteServer(port int) {
-	server := server.New(&server.DBConfig{URL: DNS}, server.EnableAuth(true))
+	simpleServer := server.New(&server.DBConfig{URL: DNS}, server.EnableAuth(true))
 	authHandler, err := auth.NewHandler(DNS, []byte(jwtSecret))
 	if err != nil {
 		log.Fatal("initialize auth error ", err)
 	}
 	http.Handle("/auth/", authHandler)
 	middleware := auth.NewMiddleware([]byte(jwtSecret))
-	http.Handle("/", middleware(server))
+	http.Handle("/", middleware(simpleServer))
 	log.Fatal(func() error {
 		server := &http.Server{Addr: string(":" + strconv.Itoa(port)), Handler: http.Handler(nil)}
 		return server.ListenAndServe()

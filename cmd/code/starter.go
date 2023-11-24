@@ -3,10 +3,14 @@ package code
 import (
 	"github.com/qdriven/qfluent-go/pkg/utils/shell"
 	"github.com/spf13/cobra"
+	_ "log/slog"
+	"os"
+	"path"
 	"strings"
 )
 
-var actions = shell.LoadCommands("starters.json")
+var CurrentDir = os.Getenv("FLUENT_HOME")
+var actions = shell.LoadCommands(path.Join(CurrentDir, "starters.json"))
 
 var (
 	AvailableStarter = actions.GetAvailableActionNames()

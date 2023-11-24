@@ -20,6 +20,11 @@ type NamedAction struct {
 	Commands []string `yaml:"commands" mapstructure:"commands" json:"commands"`
 }
 
+var NotFoundAction = &NamedAction{
+	Name: "Not Found",
+	Desc: "Action doesn't exist",
+}
+
 func ExecShellCommand(cmd string) (int, error) {
 	return Exec(cmd).
 		FilterScan(func(s string, writer io.Writer) {
@@ -52,6 +57,7 @@ func ExecShellCommands(jsonFile string, data any) {
 }
 
 func LoadCommands(configPath string) *ActionSet {
+	slog.Info("Current Action File is " + configPath)
 	actions := &ActionSet{}
 	jsonutil.ToStructFromFile(configPath, &actions)
 	return actions
@@ -69,7 +75,11 @@ func (s *ActionSet) GetNamedActionByName(name string) NamedAction {
 	result := lo.Filter(s.Actions, func(item NamedAction, index int) bool {
 		return item.Name == name
 	})
-	return result[0]
+	if len(result) > 0 {
+		return result[0]
+	} else {
+		return *NotFoundAction
+	}
 }
 
 func (s *ActionSet) ExecuteActionByName(name string) {
