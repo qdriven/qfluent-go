@@ -27,7 +27,8 @@ Add New Action in ***starters.json*** file:
    1. name: starter flag name, if name is go , then ./fluent start go
    2. desc: describe this command 
    3. commands: the commands to run in starter action
-
+   4. set the ***FLUENT_HOME*** as the starters.json location
+   5. Add any command in following format, cli app will take it 
 
 ```json
 {

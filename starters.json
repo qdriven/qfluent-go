@@ -5,8 +5,7 @@
       "desc": "Create Java Template Project",
       "commands": [
         "git clone https://github.com/fluent-qa/fluent-java-tpl",
-        "cd fluent-java-tpl",
-        "mv .git git_bnk"
+        "cd fluent-java-tpl && mv .git git_bnk"
       ]
     },
     {
@@ -14,8 +13,15 @@
       "desc": "Create typescript lib Template Project",
       "commands": [
         "git clone https://github.com/fluent-qa/ts-lib-starter",
-        "cd ts-lib-starter",
-        "mv .git git_bnk"
+        "cd ts-lib-starter && mv.git git_bnk"
+      ]
+    },
+    {
+      "name": "mono",
+      "desc": "Create typescript mono Template Project",
+      "commands": [
+        "git clone https://github.com/qdriven/mono-ts-starter.git",
+        "cd mono-ts-starter && mv.git git_bnk"
       ]
     },
     {
