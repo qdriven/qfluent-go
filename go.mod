@@ -9,7 +9,7 @@ require (
 	github.com/itchyny/gojq v0.12.13
 	github.com/rest-go/rest v0.1.4
 	github.com/samber/do v1.6.0
-	github.com/samber/lo v1.38.1
+	github.com/samber/lo v1.39.0
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.17.0
 	github.com/stretchr/testify v1.8.4
