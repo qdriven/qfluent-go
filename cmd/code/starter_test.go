@@ -2,7 +2,7 @@ package code
 
 import (
 	"fmt"
-	"github.com/qdriven/qfluent-go/pkg/utils/shell"
+	"github.com/qdriven/qfluent-go/internal/utils/shell"
 	"os"
 	"path"
 	"testing"

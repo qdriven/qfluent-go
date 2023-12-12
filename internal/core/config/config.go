@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/fsnotify/fsnotify"
-	"github.com/qdriven/qfluent-go/pkg/utils"
+	"github.com/qdriven/qfluent-go/internal/utils"
 	"github.com/spf13/viper"
 	"log/slog"
 	"reflect"

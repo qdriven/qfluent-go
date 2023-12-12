@@ -1,8 +1,8 @@
 package shell
 
 import (
-	"github.com/qdriven/qfluent-go/pkg/utils"
-	"github.com/qdriven/qfluent-go/pkg/utils/jsonutil"
+	"github.com/qdriven/qfluent-go/internal/utils"
+	"github.com/qdriven/qfluent-go/internal/utils/jsonutil"
 	"github.com/samber/lo"
 	"io"
 	"log"

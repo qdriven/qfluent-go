@@ -18,3 +18,7 @@ func DirectoryExist(path string) (bool, error) {
 	}
 	return false, err
 }
+
+func WriteStringToFile(content, targetPath string) {
+
+}
