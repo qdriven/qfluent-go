@@ -8,7 +8,7 @@ require (
 	github.com/google/go-cmp v0.5.9
 	github.com/imroc/req/v3 v3.42.2
 	github.com/itchyny/gojq v0.12.13
-	github.com/rest-go/rest v0.1.4
+	github.com/rest-go/rest v0.1.5
 	github.com/samber/do v1.6.0
 	github.com/samber/lo v1.38.1
 	github.com/spf13/cobra v1.8.0
