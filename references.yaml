@@ -45,3 +45,6 @@ org:
   - https://github.com/gookit
 cli:
   - https://github.com/go-nunu/nunu.git
+
+feishu:
+  -  https://github.com/Wsine/feishu2md.git
