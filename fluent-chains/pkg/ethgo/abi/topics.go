@@ -2,10 +2,9 @@ package abi
 
 import (
 	"bytes"
+	"fluent-chains/pkg/ethgo"
 	"fmt"
 	"reflect"
-
-	"github.com/umbracle/ethgo"
 )
 
 // ParseLog parses an event log

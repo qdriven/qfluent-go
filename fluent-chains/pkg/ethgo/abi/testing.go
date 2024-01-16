@@ -1,13 +1,12 @@
 package abi
 
 import (
+	"fluent-chains/pkg/ethgo"
 	"fmt"
 	"math/big"
 	"math/rand"
 	"reflect"
 	"strings"
-
-	"github.com/umbracle/ethgo"
 )
 
 func randomInt(min, max int) int {

@@ -2,12 +2,12 @@ package ens
 
 import (
 	"encoding/hex"
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/jsonrpc"
+	"fluent-chains/pkg/ethgo/testutil"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/jsonrpc"
-	"github.com/umbracle/ethgo/testutil"
 )
 
 var (

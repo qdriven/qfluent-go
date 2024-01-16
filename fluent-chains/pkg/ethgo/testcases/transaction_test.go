@@ -1,13 +1,13 @@
 package testcases
 
 import (
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/wallet"
 	"math/big"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/wallet"
 )
 
 func getUint64FromBigInt(b *ethgo.ArgBig) (uint64, bool) {

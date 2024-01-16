@@ -2,11 +2,11 @@ package testcases
 
 import (
 	"encoding/hex"
+	"fluent-chains/pkg/ethgo/signing"
 	"math/big"
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"github.com/umbracle/ethgo/signing"
 )
 
 type eip712Testcase struct {

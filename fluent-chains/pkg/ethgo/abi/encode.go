@@ -2,13 +2,12 @@ package abi
 
 import (
 	"encoding/hex"
+	"fluent-chains/pkg/ethgo"
 	"fmt"
 	"math/big"
 	"reflect"
 	"strconv"
 	"strings"
-
-	"github.com/umbracle/ethgo"
 )
 
 var (

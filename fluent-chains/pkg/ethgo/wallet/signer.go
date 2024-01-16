@@ -1,10 +1,9 @@
 package wallet
 
 import (
-	"math/big"
-
-	"github.com/umbracle/ethgo"
+	"fluent-chains/pkg/ethgo"
 	"github.com/umbracle/fastrlp"
+	"math/big"
 )
 
 type Signer interface {

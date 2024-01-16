@@ -2,12 +2,11 @@ package blocktracker
 
 import (
 	"context"
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/jsonrpc"
 	"fmt"
 	"sync"
 	"time"
-
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/jsonrpc"
 )
 
 // BlockProvider are the eth1x methods required by the block tracker

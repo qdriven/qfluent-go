@@ -3,6 +3,7 @@ package abi
 import (
 	"bytes"
 	"encoding/json"
+	"fluent-chains/pkg/ethgo"
 	"fmt"
 	"hash"
 	"io"
@@ -10,7 +11,6 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/umbracle/ethgo"
 	"golang.org/x/crypto/sha3"
 )
 

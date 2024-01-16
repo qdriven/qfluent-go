@@ -2,6 +2,9 @@ package abi
 
 import (
 	"encoding/hex"
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/compiler"
+	"fluent-chains/pkg/ethgo/testutil"
 	"fmt"
 	"math/big"
 	"math/rand"
@@ -10,10 +13,6 @@ import (
 	"strconv"
 	"testing"
 	"time"
-
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/compiler"
-	"github.com/umbracle/ethgo/testutil"
 )
 
 func mustDecodeHex(str string) []byte {

@@ -2,12 +2,12 @@ package testcases
 
 import (
 	"encoding/hex"
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/abi"
+	"fluent-chains/pkg/ethgo/testutil"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/abi"
-	"github.com/umbracle/ethgo/testutil"
 )
 
 func TestContract_Signatures(t *testing.T) {

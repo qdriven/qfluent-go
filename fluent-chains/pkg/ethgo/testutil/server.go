@@ -4,6 +4,8 @@ import (
 	"bytes"
 	"encoding/hex"
 	"encoding/json"
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/compiler"
 	"fmt"
 	"io/ioutil"
 	"math/big"
@@ -16,8 +18,6 @@ import (
 	"time"
 
 	"github.com/ory/dockertest"
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/compiler"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -310,7 +310,7 @@ func (t *TestServer) DeployContract(c *Contract) (*compiler.Artifact, ethgo.Addr
 	if err != nil {
 		return nil, ethgo.Address{}, err
 	}
-	return solcContract, receipt.ContractAddress, nil
+	return (*compiler.Artifact)(solcContract), receipt.ContractAddress, nil
 }
 
 // Simple jsonrpc client to avoid cycle dependencies

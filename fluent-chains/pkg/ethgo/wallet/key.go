@@ -4,9 +4,9 @@ import (
 	"crypto/ecdsa"
 	"crypto/elliptic"
 	"crypto/rand"
+	"fluent-chains/pkg/ethgo"
 
 	"github.com/btcsuite/btcd/btcec"
-	"github.com/umbracle/ethgo"
 )
 
 // S256 is the secp256k1 elliptic curve

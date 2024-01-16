@@ -1,11 +1,11 @@
 package signing
 
 import (
+	"fluent-chains/pkg/ethgo"
 	"math/big"
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"github.com/umbracle/ethgo"
 )
 
 type Message struct {

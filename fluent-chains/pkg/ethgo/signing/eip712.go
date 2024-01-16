@@ -2,14 +2,13 @@ package signing
 
 import (
 	"encoding/hex"
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/abi"
 	"fmt"
 	"math/big"
 	"reflect"
 	"sort"
 	"strings"
-
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/abi"
 )
 
 type EIP712MessageBuilder[T any] struct {

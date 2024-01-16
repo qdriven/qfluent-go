@@ -1,9 +1,9 @@
 package ens
 
 import (
+	"fluent-chains/pkg/ethgo"
 	"strings"
 
-	"github.com/umbracle/ethgo"
 	"golang.org/x/crypto/sha3"
 )
 

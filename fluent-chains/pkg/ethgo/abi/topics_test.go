@@ -1,6 +1,8 @@
 package abi
 
 import (
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/testutil"
 	"fmt"
 	"math/big"
 	"reflect"
@@ -8,8 +10,6 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/testutil"
 )
 
 func TestTopicEncoding(t *testing.T) {

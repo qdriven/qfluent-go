@@ -1,0 +1,5 @@
+repos:
+  -  https://github.com/openweb3/go-sdk-common.git
+
+eth-tools:
+  -  https://github.com/umbracle/ethgo.git

@@ -1,9 +1,9 @@
 package ens
 
 import (
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/contract"
-	"github.com/umbracle/ethgo/jsonrpc"
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/contract"
+	"fluent-chains/pkg/ethgo/jsonrpc"
 	"strings"
 )
 

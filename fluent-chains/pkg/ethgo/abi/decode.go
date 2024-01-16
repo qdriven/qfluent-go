@@ -2,13 +2,13 @@ package abi
 
 import (
 	"encoding/binary"
+	"fluent-chains/pkg/ethgo"
 	"fmt"
 	"math/big"
 	"reflect"
 	"strconv"
 
 	"github.com/mitchellh/mapstructure"
-	"github.com/umbracle/ethgo"
 )
 
 // Decode decodes the input with a given type

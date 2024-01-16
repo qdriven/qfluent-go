@@ -4,12 +4,11 @@
 package ens
 
 import (
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/contract"
+	"fluent-chains/pkg/ethgo/jsonrpc"
 	"fmt"
 	"math/big"
-
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/contract"
-	"github.com/umbracle/ethgo/jsonrpc"
 )
 
 var (

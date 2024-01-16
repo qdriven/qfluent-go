@@ -2,13 +2,13 @@ package testcases
 
 import (
 	"encoding/hex"
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/wallet"
 	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/wallet"
 )
 
 func TestAccounts(t *testing.T) {

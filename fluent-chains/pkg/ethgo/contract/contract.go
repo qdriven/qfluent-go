@@ -2,13 +2,12 @@ package contract
 
 import (
 	"encoding/hex"
+	"fluent-chains/pkg/ethgo"
+	"fluent-chains/pkg/ethgo/abi"
+	"fluent-chains/pkg/ethgo/jsonrpc"
+	"fluent-chains/pkg/ethgo/wallet"
 	"fmt"
 	"math/big"
-
-	"github.com/umbracle/ethgo"
-	"github.com/umbracle/ethgo/abi"
-	"github.com/umbracle/ethgo/jsonrpc"
-	"github.com/umbracle/ethgo/wallet"
 )
 
 // Provider handles the interactions with the Ethereum 1x node

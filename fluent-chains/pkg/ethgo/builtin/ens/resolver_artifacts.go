@@ -2,9 +2,8 @@ package ens
 
 import (
 	"encoding/hex"
+	"fluent-chains/pkg/ethgo/abi"
 	"fmt"
-
-	"github.com/umbracle/ethgo/abi"
 )
 
 var abiResolver *abi.ABI

@@ -1,14 +1,13 @@
 package abi
 
 import (
+	"fluent-chains/pkg/ethgo"
 	"fmt"
 	"math/big"
 	"reflect"
 	"regexp"
 	"strconv"
 	"strings"
-
-	"github.com/umbracle/ethgo"
 )
 
 // batch of predefined reflect types
