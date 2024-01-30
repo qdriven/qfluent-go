@@ -6,5 +6,5 @@ mkdir -p internal # internal
 mkdir -p config
 mkdir -p vendor
 #touch Dockerfile
-#touch Makefile
+#touch Makefile_tpl
 touch main.go

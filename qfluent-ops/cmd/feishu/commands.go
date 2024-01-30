@@ -2,7 +2,7 @@ package feishu
 
 import (
 	"fmt"
-	"github.com/qdriven/qfluent-go/pkg/feishu"
+	"github.com/fluent-qa/qfluent-ops/pkg/feishu"
 	"os"
 )
 

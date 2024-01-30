@@ -1,16 +1,16 @@
 # qfluent-go
 
-## Features: starter cli app 
+Go Libs Collections for daily work.
 
-starter, a cli app to create project based on template repo 
+
+## Starter Project
 
 ***[how-to](./docs/features/starter.md)***
 
+## Projects
 
-## To Do
-
-- [] Create Github Cli to create an issue with a markdown file
-
-gh issue create --title "create gh cli app to post issue with content" --body "Create Github Cli to create an issue with a markdown file"
+- [] [fluent-chains](./fluent-chains)blockchain operations
+- [] [qfluentconf](./qfluentconf) configuration libs
+- [] [qfluent-ops](./qfluent-ops)daily test ops scripts collections
 
 

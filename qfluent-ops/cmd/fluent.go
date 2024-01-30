@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/qdriven/qfluent-go/cmd/base"
-	"github.com/qdriven/qfluent-go/cmd/code"
+	"github.com/fluent-qa/qfluent-ops/cmd/base"
+	"github.com/fluent-qa/qfluent-ops/cmd/code"
 )
 
 func init() {

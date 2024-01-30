@@ -1,7 +1,7 @@
 package code
 
 import (
-	"github.com/qdriven/qfluent-go/internal/utils/shell"
+	"github.com/fluent-qa/qfluent-ops/internal/utils/shell"
 	"github.com/spf13/cobra"
 	_ "log/slog"
 	"os"
