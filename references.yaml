@@ -12,7 +12,8 @@ logging:
   - name: zap
     url: https://github.com/uber-go/zap
     rating: 4.5
-
+low-code:
+  - https://github.com/bufanyun/hotgo.git
 framework:
   - https://github.com/cdfmlr/crud.git
   - https://github.com/goccy
